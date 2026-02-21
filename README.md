@@ -61,7 +61,7 @@ Behavior summary on Raspberry Pi:
   - [index.py](index.py) — main control loop, sensor reads, GPIO logic, publishes telemetry, writes to InfluxDB, calls email alert on flame detection.
   - [publishData.py](publishData.py) — (publisher) sends temperature, humidity, fire status to MQTT (used/integrated by `index.py`).
   - [subscribeUserInput.py](subscribeUserInput.py) — MQTT subscriber for user controls (`buzzer`, `fun`, `threshold`) with thread-safe storage.
-  - [writeDB.py](writeDB.py) — writes aggregated records to MySQL for historical queries.
+  - [writeDB.py](writeDB.py) — writes aggregated records to InfluxDB for Grafana Dashboards.
   - [fire_email.py](fire_email.py) — sends fire alert email with cooldown (e.g., 300s) to avoid repeated emails.
 
 - Web Application (Flask)
@@ -91,7 +91,7 @@ This split allows easy web-based historical queries (MySQL) and high-performance
 ## Deployment & Setup (high level)
 
 Prerequisites:
-- Raspberry Pi with Python 3 and I2C enabled.
+- Raspberry Pi 4 with Python 3 and I2C enabled.
 - Python packages: `paho-mqtt`, `Flask`, `mysql-connector-python` (or `PyMySQL`), `influxdb-client` (or `influxdb`), sensor libraries for BME280 (e.g., `smbus2`, `Adafruit_BME280`), and `RPi.GPIO` or `gpiozero`.
 - MySQL (XAMPP or native) for web historical storage.
 - InfluxDB and Grafana for time-series and dashboards.
@@ -173,9 +173,4 @@ flask run --host=0.0.0.0 --port=5000
 - Ye Min Htet
 - Suu Suu Phyoe
 
----
-
-If you'd like, I can:
-- Commit this README to git and create a suggested repository layout.
-- Add a `requirements.txt` and a short `README-setup.md` with exact config variables.
 
