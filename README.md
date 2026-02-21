@@ -1,7 +1,5 @@
 # Smart Bakery — IoT Environmental Monitoring
 
-Suggested repository name: **smart-bakery-monitor**
-
 ## Overview
 
 Smart Bakery is an end-to-end IoT system for continuous environmental monitoring of small and medium bakeries. It automates temperature, humidity, and fire monitoring using a Raspberry Pi and BME280 sensor, with remote control and visualization via a Flask web dashboard, Grafana, MySQL, and InfluxDB. The system adds safety alerts (buzzer and email) and historical traceability for quality control.
@@ -172,5 +170,18 @@ flask run --host=0.0.0.0 --port=5000
 - Zin Hmue Paing
 - Ye Min Htet
 - Suu Suu Phyoe
+
+---
+## YouTube Demonstration Video
+A complete demonstration and explanation of the Smart Bakery System is available in the following video:
+https://youtu.be/DQjLUSTHNDY?si=bKEO9rzUdLjNYU7S
+
+The video covers:
+- System architecture overview
+- Hardware setup and patched circuit
+- Real time data monitoring
+- MQTT communication
+- Dashboard visualization
+- Fire detection and email alert demonstration
 
 
